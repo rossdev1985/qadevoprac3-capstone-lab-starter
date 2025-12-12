@@ -4,6 +4,10 @@ LABEL org.opencontainers.image.source=https://github.com/qa-tech-training/qadevo
 
 WORKDIR /app
 
-# TODO: add the instructions needed to copy the package.json, install dependencies, and copy the server.js file
+COPY package.json .
+
+RUN npm install
+
+COPY server.js
 
 CMD ["node", "server.js"]
